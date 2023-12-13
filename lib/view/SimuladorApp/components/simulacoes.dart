@@ -1,4 +1,5 @@
 import 'package:brasil_fields/brasil_fields.dart';
+import 'package:desktop/components/image_component.dart';
 import 'package:flutter/material.dart';
 
 class Simulacoes extends StatelessWidget {
@@ -30,6 +31,10 @@ class Simulacoes extends StatelessWidget {
       ),
       child: Row(
         children: [
+          getImage(),
+          const SizedBox(
+            width: 15,
+          ),
           Column(
             children: [
               Column(
@@ -65,6 +70,28 @@ class Simulacoes extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget getImage() {
+    if (instituicao == 'PAN') {
+      return const ImageComponent(
+        image: 'assets/images/pan.png',
+        heigth: 45,
+        width: 45,
+      );
+    }
+    if (instituicao == 'OLE') {
+      return const ImageComponent(
+        image: 'assets/images/ole.jpg',
+        heigth: 45,
+        width: 45,
+      );
+    }
+    return const ImageComponent(
+      image: 'assets/images/bmg.png',
+      heigth: 45,
+      width: 45,
     );
   }
 }
